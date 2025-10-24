@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Jokenpô</title>
+    <link rel="icon" href="">
+
+    <link rel="stylesheet" href="style.css" />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <button type="button" id="hint-button" aria-label="Ajuda">
+        <img id="hint-logo" src="./assets/hint-icon.png" alt="Ajuda">
+    </button>
+
+    <main>
+        <h1>Jokenpô</h1>
+
+        <section id="choices">
+            <button type="button" class="hand" onclick="playerChoice('paper')" aria-label="Papel">
+                <img src="./assets/paper.png" alt="Mão representando papel">
+            </button>
+
+            <button type="button" class="hand" onclick="playerChoice('scissor')" aria-label="Tesoura">
+                <img src="./assets/scissor.png" alt="Mão representando tesoura">
+            </button>
+
+            <button type="button" class="hand" onclick="playerChoice('rock')" aria-label="Pedra">
+                <img src="./assets/rock.png" alt="Mão representando pedra">
+            </button>
+        </section>
+
+        <section id="result-container" aria-live="polite" role="status">
+            <h2 id="result-message" aria-atomic="true"></h2>
+            <p id="subtext" aria-atomic="true"></p>
+            
+            <button id="play-again" type="button">Jogar novamente</button>
+        </section>
+
+        <section id="scoreboard">
+            <p>Sua pontuação: <span id="player-score">0</span></p>
+            <p>Pontuação inimiga: <span id="enemy-score">0</span></p>
+        </section>
+    </main>
+
+    <section id="hint-container" aria-hidden="true">
+        <div id="hint-content" role="dialog" aria-modal="true" aria-labelledby="howto-title">
+            <h2 id="howto-title">Como jogar</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Pedra</th>
+                        <th>Papel</th>
+                        <th>Tesoura</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Pedra</td>
+                        <td>=</td>
+                        <td>2×</td>
+                        <td>0×</td>
+                    </tr>
+                    <tr>
+                        <td>Papel</td>
+                        <td>0×</td>
+                        <td>=</td>
+                        <td>2×</td>
+                    </tr>
+                    <tr>
+                        <td>Tesoura</td>
+                        <td>2×</td>
+                        <td>0×</td>
+                        <td>=</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="guide">
+                <p><strong>Como ler:</strong></p>
+                <ul>
+                    <li>2× → vitória (super eficaz)</li>
+                    <li>0× → derrota (não afeta)</li>
+                    <li>= → empate (neutro)</li>
+                </ul>
+            </div>
+
+            <h3 class="chart-subtitle">Representação Visual</h3>
+            <img src="./assets/type-chart.png" alt="Type Chart" class="hint-image">
+        </div>
+    </section>
+</body>
+
+<script src="script.js">
+</script>
+
+</html>
