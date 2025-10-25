@@ -1,4 +1,3 @@
-// ---- Modal de ajuda ----
 const hintButton = document.getElementById('hint-button');
 const hintContainer = document.getElementById('hint-container');
 
